@@ -238,8 +238,8 @@ flags.DEFINE_string(
 FLAGS = flags.FLAGS
 
 # Dataset constants
-_NUM_TRAIN_IMAGES = 1281167
-_NUM_EVAL_IMAGES = 50000
+_NUM_TRAIN_IMAGES = 222  #1281167
+_NUM_EVAL_IMAGES = 72 #50000
 
 # Random cropping constants
 _RESIZE_SIDE_MIN = 300
