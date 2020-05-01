@@ -80,6 +80,10 @@ flags.DEFINE_boolean(
     'gcs_upload', True, 'Set to false to not upload to gcs.')
 flags.DEFINE_boolean(
     'dl_images' , True, 'Download images from Labelbox')
+flags.DEFINE_ingeger(
+    'training_shards', 10, 'Training shards')
+flags.DEFINE_integer(
+    'validation_shards', 5, 'Validation shards')
 
 FLAGS = flags.FLAGS
 
@@ -478,6 +482,12 @@ def get_image(  # pylint: disable-msg=too-many-arguments
 
 
 def main(argv):  # pylint: disable=unused-argument
+  global TRAINING_SHARDS
+  global VALIDATION_SHARDS
+  
+  TRAINING_SHARDS = FLAGS.training_shards
+  VALIDATION_SHARDS = FLAGS.validation_shards
+  
   tf.logging.set_verbosity(tf.logging.INFO)
 
   if FLAGS.gcs_upload and FLAGS.project is None:
