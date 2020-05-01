@@ -80,7 +80,7 @@ flags.DEFINE_boolean(
     'gcs_upload', True, 'Set to false to not upload to gcs.')
 flags.DEFINE_boolean(
     'dl_images' , True, 'Download images from Labelbox')
-flags.DEFINE_ingeger(
+flags.DEFINE_integer(
     'training_shards', 10, 'Training shards')
 flags.DEFINE_integer(
     'validation_shards', 5, 'Validation shards')
